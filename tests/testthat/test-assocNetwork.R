@@ -20,8 +20,8 @@ testthat::test_that("a data frame can be filtered to include only responses that
 
 testthat::test_that("a response profile can be generated", {
   resp <- c(2, 3)
-  all_unique_resp <- 1:4
-  testthat::expect_equal(respProfile(resp, all_unique_resp), c(FALSE, TRUE, TRUE, FALSE))
+  all_unique <- 1:4
+  testthat::expect_equal(respProfile(resp, all_unique), c(FALSE, TRUE, TRUE, FALSE))
 })
 
 testthat::test_that("an unweighted associative network can be generated", {
