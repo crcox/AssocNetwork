@@ -3,7 +3,7 @@
 #' @param X A square matrix representing an associative network
 #' @return The number of nodes (i.e., rows) in the network
 count_nodes <- function(X) {
-  return()
+  return(nrow(X))
 }
 
 #' Count number of edges 
@@ -11,9 +11,9 @@ count_nodes <- function(X) {
 #' @param X A square matrix representing an associative network
 #' @return The number of edges (i.e., non-zero values) in the network
 count_edges <- function(X) {
-  return()
-}
+    return(length(count_nodes(X)[X != 0]))
 
+}
 #' Compute in-degree by node
 #' 
 #' @param X A square matrix representing an associative network
@@ -27,7 +27,7 @@ count_edges <- function(X) {
 #' There is one directed edge, A --> B.
 #' The in-degree of A is 0, and the in-degree of B is 1.
 indegree <- function(X) {
-  return()
+  return(apply(X,
 }
 
 #' Compute out-degree by node
