@@ -8,7 +8,7 @@
 #' @param x A vector
 #' @return Unique values of x in ascending order
 sortedSet <- function(x) {
-  return()
+  return(sort(unique(x)))
 }
 
 #' Identify which elements of x are cues
@@ -17,7 +17,7 @@ sortedSet <- function(x) {
 #' @param cues A vector defining the full set of unique cues
 #' @return A logical vector with \code{length(x)} elements.
 iscue <- function(x, cues) {
-  return()
+  return(x %in% cues)
 }
 
 #' Filter cue-response pairs where the response is not a cue word
@@ -25,7 +25,7 @@ iscue <- function(x, cues) {
 #' @param d A data frame with two columns: "cue" and "resp".
 #' @return A subset of rows from the original data frame.
 filterNonCueResponses <- function(d) {
-  return()
+  return(subset(d, iscue(d$resp, cues = sortedSet(d$cue))))
 }
 
 #' Generate a logical response profile
@@ -34,7 +34,7 @@ filterNonCueResponses <- function(d) {
 #' @param all_uniq A vector containing the full set of unique values that define the profile.
 #' @return A logical vector with \code{length(all_uniq)} elements.
 respProfile <- function(resp, all_unique) {
-  return()
+  return(all_unique %in% resp)
 }
 
 #' Generate an unweighted associative network
